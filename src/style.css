@@ -1,0 +1,194 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  background-color: #000000; /* Fond noir */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #3178c6aa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.invisible {
+  opacity: 0;
+}
+.display-none {
+  display: none;
+}
+
+.videoView,
+.detectOnClick {
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+}
+.videoView p {
+  position: absolute;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: #007f8b;
+  color: #fff;
+  border: 1px dashed rgba(255, 255, 255, 0.7);
+  z-index: 2;
+  font-size: 12px;
+  margin: 0;
+}
+.highlighter {
+  background: rgba(0, 255, 0, 0.25);
+  border: 1px dashed #fff;
+  border-radius: 100%;
+  z-index: 1;
+  position: absolute;
+}
+.key-point {
+  position: absolute;
+  z-index: 1;
+  width: 3px;
+  height: 3px;
+  background-color: #ff0000;
+  /* border: 1px solid #ffffff; */
+  border-radius: 50%;
+  display: block;
+}
+
+/**  flip video */
+video {
+  transform: scaleX(-1);
+}
+
+/* Ajout pour le centrage du canvas et le positionnement de la caméra */
+
+#canvasContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#drawCanvas {
+  border: 2px solid white; /* Bordure blanche */
+  width: 800px; /* Taille ajustable du canevas */
+  height: 600px;
+  z-index: 1;
+}
+
+
+#webcamContainer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+#webcam {
+  width: 200px; /* Taille ajustable de la webcam */
+  height: auto;
+  border: 2px solid white; /* Bordure blanche */
+  filter: grayscale(1);
+}
+#liveView {
+  position: relative;
+}
+
+/* Ajout pour le bouton de la webcam */
+#webcamButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid white; /* Bordure blanche */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+}
+#webcamButton:hover {
+  background-color: #535bf2;
+}
